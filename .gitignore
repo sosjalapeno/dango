@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+!Packaging/DMG/.DS_Store
+.bclake
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# Xcode
+build/
+Build/
+DerivedData/
+*.xcodeproj
+*.xcworkspace
+!project.yml
+*.xcuserstate
+xcuserdata/
+*.xcuserdatad
+
+# Generated artifacts
+*.dmg
+
+# Astro / Node
+Website/node_modules/
+Website/.astro/
+Website/dist/
+Website/.env
+Website/.env.*

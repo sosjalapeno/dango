@@ -1,0 +1,46 @@
+name: Dango
+options:
+  bundleIdPrefix: com.mateusz
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "16.0"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    CODE_SIGN_IDENTITY: "-"
+    CODE_SIGN_STYLE: Automatic
+
+targets:
+  Dango:
+    type: application
+    platform: macOS
+    sources:
+      - path: Dango
+        excludes:
+          - Info.plist
+    info:
+      path: Dango/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.mateusz.dango
+        INFOPLIST_FILE: Dango/Info.plist
+        PRODUCT_NAME: Dango
+        COMBINE_HIDPI_IMAGES: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    dependencies: []
+
+  DangoTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: DangoTests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.mateusz.dango.tests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Dango.app/Contents/MacOS/Dango"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+    dependencies:
+      - target: Dango

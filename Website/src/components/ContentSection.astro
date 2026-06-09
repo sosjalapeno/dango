@@ -1,0 +1,64 @@
+---
+import ScreenshotGallery from './ScreenshotGallery.astro';
+---
+
+<section class="content section" id="content">
+  <div class="content__block">
+    <p class="content__eyebrow">Dango</p>
+    <div class="content__lines">
+      <span class="content__line">Menu bar pomodoro timer.</span>
+      <span class="content__line">Each focus session fills a dango.</span>
+      <span class="content__line">Each rest adds glazing.</span>
+      <span class="content__line">Four sessions finish a roll.</span>
+    </div>
+    <p class="content__body">No bloat, no clutter. Native SwiftUI design. Information you can read at a glance, and it does all that while looking pretty.</p>
+    <ScreenshotGallery />
+    <div class="content__actions content__actions--hero">
+      <a
+        class="hero-cta"
+        id="hero-cta"
+        href="https://github.com/sosjalapeno/dango/releases/latest"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="hero-cta__shine"></span>
+        <span class="hero-cta__label">Download for macOS</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="content__block">
+    <p class="content__eyebrow">Installation</p>
+    <span class="content__line">Install from GitHub.</span>
+    <p class="content__body">Dango ships outside the App Store. The build is ad-hoc signed, not notarized. macOS Gatekeeper blocks the first launch. This is normal.</p>
+    <ol class="content__steps">
+      <li>Download the DMG from GitHub. Drag Dango to Applications.</li>
+      <li>Double-click Dango, macOS warns the developer is unverified. Click OK.</li>
+      <li>Open System Settings → Privacy &amp; Security. Under Security, click Open Anyway, then Open.</li>
+      <li>Or right-click Dango, choose Open, then Open, macOS remembers your choice after the first launch.</li>
+    </ol>
+  </div>
+
+  <div class="content__block">
+    <p class="content__eyebrow">Support</p>
+    <p class="content__body">This app is free and open source, and always will be. If it's made your focus a little sweeter, you can buy me a dango as a thank-you. I'll put the funds toward shipping Dango to the App Store.</p>
+    <div class="content__actions">
+      <a
+        class="button primary"
+        href="https://buymeacoffee.com/sosjalapeno"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Support
+      </a>
+      <a
+        class="button"
+        href="https://github.com/sosjalapeno/dango"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View Source on GitHub
+      </a>
+    </div>
+  </div>
+</section>

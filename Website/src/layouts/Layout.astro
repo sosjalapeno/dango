@@ -1,0 +1,33 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Dango, Menu Bar Pomodoro for macOS',
+  description = 'Menu bar pomodoro timer. Each focus session fills a dango. Each rest adds glazing. Four sessions finish a roll. No bloat, no clutter. Native SwiftUI design. Information you can read at a glance, and it does all that while looking pretty.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <slot />
+      </div>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BentoGallery from '../components/BentoGallery.astro';
+import ContentSection from '../components/ContentSection.astro';
+---
+
+<Layout>
+  <main>
+    <BentoGallery />
+    <ContentSection />
+  </main>
+</Layout>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { initBento } from '../scripts/bento';
+  import { initHeroCta } from '../scripts/cta';
+  import { initScreenshotGrid } from '../scripts/screenshot-grid';
+  import { initSmoothScroll } from '../scripts/smooth-scroll';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  initSmoothScroll();
+  initBento();
+  initHeroCta();
+  initScreenshotGrid();
+  ScrollTrigger.refresh();
+</script>

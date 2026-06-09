@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets';
+import screenshot1 from '../assets/screenshots/1.png';
+import screenshot2 from '../assets/screenshots/2.png';
+import screenshot3 from '../assets/screenshots/3.png';
+import screenshot4 from '../assets/screenshots/4.png';
+
+const screenshots = [
+  { src: screenshot1, alt: 'Menu bar focus timer controls' },
+  { src: screenshot2, alt: 'Focus time and completed rolls' },
+  { src: screenshot3, alt: 'Duration and toggle settings' },
+  { src: screenshot4, alt: 'Menu bar popover during focus' },
+];
+---
+
+<div class="image-content">
+  <div class="image-container">
+    <div class="images" id="screenshot-grid">
+      {
+        screenshots.map((shot, index) => (
+          <div class={`product product-${index + 1}`} data-grid={`img-${index + 1}`}>
+            <Image
+              src={shot.src}
+              alt={shot.alt}
+              width={800}
+              height={800}
+              class="product__image"
+              loading={index === 0 ? 'eager' : 'lazy'}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
