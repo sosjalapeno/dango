@@ -8,6 +8,11 @@ const {
   title = 'Dango, Menu Bar Pomodoro for macOS',
   description = 'Menu bar pomodoro timer. Each focus session fills a dango. Each rest adds glazing. Four sessions finish a roll. No bloat, no clutter. Native SwiftUI design. Information you can read at a glance, and it does all that while looking pretty.',
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og.png', Astro.site);
+const ogImageWidth = 629;
+const ogImageHeight = 629;
 ---
 
 <!doctype html>
@@ -16,7 +21,21 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content={String(ogImageWidth)} />
+    <meta property="og:image:height" content={String(ogImageHeight)} />
+    <meta property="og:image:alt" content="Menu bar focus timer controls" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+    <meta name="twitter:image:alt" content="Menu bar focus timer controls" />
     <title>{title}</title>
   </head>
   <body>
